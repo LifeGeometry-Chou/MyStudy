@@ -18,7 +18,7 @@
  * nfds：文件描述符数量，数组最大下标+1
  * timeout：超时时长，单位ms
  * 返回值：>0--成功；-1--失败；0--超时
- * 底层线性表，效率与select相同，但是不夸平台，只能在linux使用，所以使用最少
+ * 效率与select相同，但是不夸平台，只能在linux使用，所以使用最少
 */
 
 //fd信息结构体
@@ -180,10 +180,6 @@ int main(int argc, char *argv[])
     fds[0].fd = listenFd;
 
     int maxFd = 0;
-
-    // Fdinfo info;
-    // info.fds = fds;
-    // info.maxFd = &maxFd;
 
     while (1)
     {
