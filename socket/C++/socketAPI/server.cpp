@@ -28,8 +28,8 @@ void* threadMain(void *arg)
             break;
         
         write(fileFd, buffer, recvLen);
-        free(buffer);
-        buffer = NULL;
+        delete buffer;
+        buffer = nullptr;
     }
     //通信结束
     cout << "接收完成" << endl;

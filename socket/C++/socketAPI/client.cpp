@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
     char fileMessage[100];
     memset(fileMessage, 0, sizeof(fileMessage));
     //与服务端通信
-    while ((length = read(fileFd, fileMessage, rand() % 100 + 1)) > 0)
+    while ((length = read(fileFd, fileMessage, sizeof(fileMessage))) > 0)
     {
         //发送数据
         sock.sendMessage(fileMessage, length);
